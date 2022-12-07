@@ -68,15 +68,14 @@ class Directory():
         return min(viable_deletions, key=lambda x: x.get_size())
 
 
-
 class File():
     def __init__(self, size, name):
         self.name = name
         self.size = size
 
+
 def build_tree_from_commands():
     master = Directory("/")
-    current_ls = []
     for line in open("input.txt"):
         l = line.strip()
         if l == "$ cd /":
@@ -93,9 +92,6 @@ def build_tree_from_commands():
             working_dir.add_item(l)
 
     return master
-
-
-
 
 
 def main():
