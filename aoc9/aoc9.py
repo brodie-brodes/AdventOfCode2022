@@ -54,7 +54,6 @@ class Knot():
     def move(self, direction):
         self.pos[Rope.DIR_MOVES[direction][0]] += Rope.DIR_MOVES[direction][1]
 
-
     def update_next_knot(self):
         if self.next_knot == None:
             return ""
@@ -64,15 +63,12 @@ class Knot():
         if max([abs(x_delta), abs(y_delta)]) > 1:
             self.pull_next_knot(x_delta, y_delta)
 
-
-
         self.next_knot.update_next_knot()
         self.next_knot.update_positions_visited()
 
     def update_positions_visited(self):
         if tuple(self.pos) not in self.positions_visited:
             self.positions_visited.append(tuple(self.pos))
-
 
     def pull_next_knot(self, x_delta, y_delta):
         if x_delta < 0:
@@ -86,8 +82,6 @@ class Knot():
             self.next_knot.move("U")
 
 
-
-
 def main():
     rope = Rope(10, start_pos=[12,5])
 
@@ -97,7 +91,6 @@ def main():
             rope.pull(direction)
 
     print("Number of positions visited by tail - ", len(rope.tail.positions_visited))
-
 
 
 if __name__ == "__main__":
