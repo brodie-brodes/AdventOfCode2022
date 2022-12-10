@@ -43,7 +43,7 @@ def get_scenic_score(trees, row, col):
     
 
 def main():
-    trees = [i.strip() for i in open("aoc8/input.txt")]
+    trees = [i.strip() for i in open("input.txt")]
     
     visible_trees = 0
     max_scenic_score = 0
