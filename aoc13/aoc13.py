@@ -4,7 +4,7 @@ from functools import cmp_to_key
 def is_in_right_order(p1, p2):
     if isinstance(p1, int) and isinstance(p2, int):
         if p1 < p2:
-            return True, True # first boolean indicates whether solved, second is whether conodition is true
+            return True, True # first boolean indicates whether solved, second is whether condition is true
         elif p1 > p2:
             return True, False
         else:
